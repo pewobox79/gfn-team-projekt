@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_elements_grid_elements",
+  "info": {
+    "displayName": "gridElement"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "hasBgImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "bgColor": {
+      "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasBgImage"
+            },
+            false
+          ]
+        }
+      },
+      "enum": [
+        "red",
+        "white",
+        "black"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasBgImage"
+            },
+            true
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "component": "elements.grid-item",
+      "repeatable": true,
+      "max": 3
+    }
+  },
+  "config": {}
+}

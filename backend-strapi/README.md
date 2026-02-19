@@ -1,5 +1,5 @@
 # user access strapi GFN Projekt
-username: gfn@projekt.de
+username: gfn@projekt.de | test@gfn.de
 password:  TestGfn2026!
 
 # 🚀 Getting started with Strapi

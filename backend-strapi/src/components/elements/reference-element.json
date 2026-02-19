@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_elements_reference_elements",
+  "info": {
+    "displayName": "referenceElement"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "hasBgImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "image": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasBgImage"
+            },
+            true
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bgColor": {
+      "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasBgImage"
+            },
+            false
+          ]
+        }
+      },
+      "enum": [
+        "red",
+        "white",
+        "black"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "component": "elements.reference-item",
+      "repeatable": true,
+      "max": 3
+    }
+  },
+  "config": {}
+}

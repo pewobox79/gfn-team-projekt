@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_elements_reference_items",
+  "info": {
+    "displayName": "referenceItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "hasButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "button": {
+      "type": "component",
+      "component": "components.button",
+      "repeatable": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

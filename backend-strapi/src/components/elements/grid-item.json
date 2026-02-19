@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_elements_grid_items",
+  "info": {
+    "displayName": "gridItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "hasButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "button": {
+      "type": "component",
+      "component": "components.button",
+      "repeatable": false
+    },
+    "hasBgImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "bgColor": {
+      "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasBgImage"
+            },
+            false
+          ]
+        }
+      },
+      "enum": [
+        "red",
+        "white",
+        "black"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasBgImage"
+            },
+            true
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

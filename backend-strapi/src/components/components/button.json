@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_components_buttons",
+  "info": {
+    "displayName": "button"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "bgColor": {
+      "type": "enumeration",
+      "enum": [
+        "red",
+        "white",
+        "black"
+      ]
+    },
+    "hasBorderRadius": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasIcon": {
+      "type": "boolean"
+    },
+    "icon": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasIcon"
+            },
+            true
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

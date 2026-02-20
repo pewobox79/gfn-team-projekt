@@ -474,6 +474,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'elements.reference-element',
         'elements.grid-element',
         'components.jumbotron',
+        'elements.cta-element',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

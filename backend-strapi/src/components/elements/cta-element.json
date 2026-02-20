@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_elements_cta_elements",
+  "info": {
+    "displayName": "ctaElement"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bgColor": {
+      "type": "enumeration",
+      "enum": [
+        "red",
+        "white",
+        "black"
+      ]
+    },
+    "hasButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "button": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasButton"
+            },
+            true
+          ]
+        }
+      },
+      "component": "components.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

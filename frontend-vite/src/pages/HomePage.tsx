@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
+
 import CallToAction from "@/components/CallToActionElement"
->>>>>>> e4f8f31 (Call To Action Subscribe Added)
 
 import Footer from "@/components/footer/Footer"
 import MyButton from "@/components/MyButton"
@@ -18,16 +16,16 @@ export default function HomePage() {
 
     return <>
         <h1 className="text-[4rem]">GFN Projekt</h1>
-<<<<<<< HEAD
+
         <MyButton label="Click me" bgColor="black" link="https://www.bild.de" hasBorderRadius={true} />
         {pages.map((page: { documentId: string }) => {
             return <p key={page.documentId}>{JSON.stringify(page)}</p>
         })}
         <Footer />
-=======
+
         <CallToAction 
             title="Subscribe to our Newsletter!"
         />
->>>>>>> e4f8f31 (Call To Action Subscribe Added)
+
     </>
 }

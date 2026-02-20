@@ -11,7 +11,7 @@ export default function HomePage() {
     }, [])
 
     return <>
-        <h1 className="text-[4rem]">GFN Projekt make it</h1>
+        <h1 className="text-[4rem]">GFN Projekt</h1>
         {pages.map((page: { documentId: string }) => {
             return <p key={page.documentId}>{JSON.stringify(page)}</p>
         })}

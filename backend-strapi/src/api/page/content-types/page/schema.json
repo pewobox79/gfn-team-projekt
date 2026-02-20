@@ -23,7 +23,8 @@
       "components": [
         "elements.reference-element",
         "elements.grid-element",
-        "components.jumbotron"
+        "components.jumbotron",
+        "elements.cta-element"
       ]
     }
   }

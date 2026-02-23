@@ -4,7 +4,7 @@ type JumbotronType = {
     subTitle: string
     bgImage?: string
     hasImage: boolean
-    bgColor?: string 
+    bgColor?: string
     hasButton: boolean
     button?: ButtonType
 }
@@ -18,10 +18,18 @@ type ButtonType = {
     icon?: string
 }
 
-const Jumbotron = ({title, subTitle, bgImage, button}: JumbotronType) => {
+const Jumbotron = ({ title, subTitle, bgImage, bgColor, hasButton, button }: JumbotronType) => {
 
-    return (
-        
+    return (<>
+        <div className={`flex w-full ${bgColor ? bgColor : " "}`}>
+            <h1>{title}</h1>
+            <h4>{subTitle}</h4>
+
+        </div>
+    </>
+
     )
 
 }
+
+export default Jumbotron

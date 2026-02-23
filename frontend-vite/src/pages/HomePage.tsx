@@ -1,14 +1,18 @@
-import HeadingElement from "@/components/HeadingElement"
-
+import { getPages } from "@/lib/axios/pagesHelper"
+import { useEffect, useState } from "react"
 
 export default function HomePage() {
 
+    const [pages, setPages] = useState([])
+    useEffect(() => {
+
+        getPages().then(res => setPages(res.data))
+    }, [])
+
     return <>
         <h1 className="text-[4rem]">GFN Projekt make it</h1>
-        <HeadingElement 
-        eyebrow="OUR SERVICES"
-        title="Our Provided Services"
-        level="h2"
-        />
+        {pages.map((page: { documentId: string }) => {
+            return <p key={page.documentId}>{JSON.stringify(page)}</p>
+        })}
     </>
 }

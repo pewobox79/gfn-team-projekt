@@ -10,6 +10,7 @@ export default function HomePage() {
         getPages().then(res => setPages(res.data))
     }, [])
 
+
     return <>
         <h1 className="text-[4rem]">GFN Projekt</h1>
         {pages.map((page: { documentId: string }) => {

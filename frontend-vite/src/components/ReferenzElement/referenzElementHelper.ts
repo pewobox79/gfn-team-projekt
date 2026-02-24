@@ -20,32 +20,32 @@ export const getReferenzElement = async () => {
 export function getReferenzElementDummy(): ReferenzElementType {
 
     const dummyItem1: ReferenzElementItemType = {
-        title: "dummyItem1",
-        description: "description of dummyItem1",
+        title: "Dummy Item 1",
+        description: "description of dummyItem1 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         hasButton: false,
         button: "",
         image: "services-round-1.png"
     }
 
     const dummyItem2: ReferenzElementItemType = {
-        title: "dummyItem2",
-        description: "description of dummyItem2",
+        title: "Dummy Item 2",
+        description: "description of dummyItem2 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         hasButton: false,
         button: "",
         image: "services-round-2.png"
     }
 
     const dummyItem3: ReferenzElementItemType = {
-        title: "dummyItem3",
-        description: "description of dummyItem3",
+        title: "Dummy Item 3",
+        description: "description of dummyItem3 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         hasButton: false,
         button: "",
         image: "services-round-3.png"
     }
 
     const dummyItem4: ReferenzElementItemType = {
-        title: "dummyItem4",
-        description: "description of dummyItem4",
+        title: "Dummy Item 4",
+        description: "description of dummyItem4 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         hasButton: false,
         button: "",
         image: "work-1.jpg"
@@ -57,7 +57,7 @@ export function getReferenzElementDummy(): ReferenzElementType {
         hasBgImage: false,
         image: undefined,
         bgColor: "black",
-        items: [dummyItem1, dummyItem2, dummyItem3, dummyItem4]
+        items: [dummyItem1, dummyItem2, dummyItem4]
     }
 
     return dummyReferenzElement

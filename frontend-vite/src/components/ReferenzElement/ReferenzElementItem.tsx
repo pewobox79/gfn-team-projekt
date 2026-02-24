@@ -1,6 +1,4 @@
 import type { ReferenzElementItemType } from "@/types/referenzElement"
-import Button from 'react';
-
 
 const imagePath = "./src/assets/images/referenzElementImages/"
 
@@ -8,21 +6,19 @@ export default function ReferenzElementItem(item: ReferenzElementItemType) {
 
     console.log("item", item)
 
-    return <div className="flex-1 border my-3 p-2 col-lg-4 col-md-6 col-sm-12 col-12 single-services services-inner">
-        {/* <div>{item.title}</div> */}
-        {/* <div>{item.description}</div> */}
-        <div><img src={`${imagePath}${item.image}`} alt="Beschreibung des Bildes" /></div>
+    return <div className="flex flex-col text-center">
+        <div className="">
+            <img className="rounded-full w-80 h-80 object-cover p-3 mt-3 ml-13 mr-13 mb-11 border-2 border-dashed" src={`${imagePath}${item.image}`} alt="Beschreibung des Bildes" />
+        </div>
 
-        <div className="services-content services-content-style-1 text-center">
-            <h5 className="title">{item.title}</h5>
-            <p className="description">{item.description}</p>
+        <div className="text-center">
+            <h3 className="heading__title">{item.title}</h3>
+            <p className="text-base w-72 justify-self-center text-center mt-4 leading-7 font-normal text-gray-500">{item.description}</p>
         </div>
         {/* <div><Button title={item.title} onPress={()=>showAlert('Cannot press this one')}/></div> */}
         <div className="text-center">
             <button className="border bg-sky-200" onClick={() => alert(`${item.title}`)}>{item.title}</button>
         </div>
-
-        {/* <div><img src="./src/assets/images/referenzElementImages/services-round-1.png" alt="Beschreibung des Bildes" /></div> */}
     </div>
 
 }

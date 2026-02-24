@@ -21,8 +21,6 @@ export default function ReferenzElement() {
         })
     }, [])
 
-    // console.log("referenzElement", referenzElement, "typeof", typeof referenzElement, "errorMsg", errorMsg)
-
     let referenzElementFromDB = getReferenzElementDummy()
     let itemList = null
     if (!errorMsg && referenzElement) {
@@ -35,14 +33,11 @@ export default function ReferenzElement() {
         }
     })
 
-    // console.log("referenzElementFromDB", referenzElementFromDB)
-
-
     return <div className="border my-3 p-2 rounded-20">
         <HeadingElement eyebrow={referenzElementFromDB.title}
             title={referenzElementFromDB.subTitle}
             level="h2" />
-        <div className="inline-flex row g-5">{itemList}</div>
+        <div className="flex flex-wrap column p-4">{itemList}</div>
     </div>
 
 }

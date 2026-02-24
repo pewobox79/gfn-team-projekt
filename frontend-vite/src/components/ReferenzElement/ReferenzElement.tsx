@@ -6,7 +6,7 @@ import HeadingElement from "../HeadingElement"
 
 const maxImagesCounter = 3
 
-export default function ReferenzElement() {
+export default function ReferenzElement({title = 'My Services', subTitle = 'sub title', items = []}) {
 
     const [referenzElement, setReferenzElement] = useState<ReferenzElementType>()
     const [errorMsg, setErrorMsg] = useState<string>()
@@ -33,9 +33,12 @@ export default function ReferenzElement() {
         }
     })
 
-    return <div className="w-full md:w-auto border">
-        <HeadingElement eyebrow={referenzElementFromDB.title}
-            title={referenzElementFromDB.subTitle}
+    const imagePath = "./src/assets/images/referenzElementImages/"
+    const imageFile = "services-bg-image-1.png"
+
+    return <div className="w-full md:w-auto border" style={{backgroundImage: `url(${imagePath}${imageFile})`}}>
+        <HeadingElement eyebrow={subTitle}
+            title={title}
             level="h2" />
         <div className="flex flex-wrap column p-4">{itemList}</div>
     </div>

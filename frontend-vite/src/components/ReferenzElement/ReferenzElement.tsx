@@ -33,7 +33,7 @@ export default function ReferenzElement() {
         }
     })
 
-    return <div className="border my-3 p-2 rounded-20">
+    return <div className="w-full md:w-auto border">
         <HeadingElement eyebrow={referenzElementFromDB.title}
             title={referenzElementFromDB.subTitle}
             level="h2" />

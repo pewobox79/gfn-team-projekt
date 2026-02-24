@@ -2,6 +2,7 @@ import type { ReferenzElementType } from "@/types/referenzElement"
 import { useEffect, useState } from "react"
 import { getReferenzElement, getReferenzElementDummy } from "./referenzElementHelper"
 import ReferenzElementItem from "./ReferenzElementItem"
+import HeadingElement from "../HeadingElement"
 
 const maxImagesCounter = 3
 
@@ -20,7 +21,7 @@ export default function ReferenzElement() {
         })
     }, [])
 
-    console.log("referenzElement", referenzElement, "typeof", typeof referenzElement, "errorMsg", errorMsg)
+    // console.log("referenzElement", referenzElement, "typeof", typeof referenzElement, "errorMsg", errorMsg)
 
     let referenzElementFromDB = getReferenzElementDummy()
     let itemList = null
@@ -38,13 +39,10 @@ export default function ReferenzElement() {
 
 
     return <div className="border my-3 p-2 rounded-20">
-        <div>ReferenzElement Test</div>
-        <div className="section-sub-title center-title text-center">{referenzElementFromDB.title}</div>
-        <div className="title split-collab text-center">{referenzElementFromDB.subTitle}</div>
-        {/* <div><img src="./src/assets/images/referenzElementImages/services-round-1.png" alt="Beschreibung des Bildes" /></div> */}
+        <HeadingElement eyebrow={referenzElementFromDB.title}
+            title={referenzElementFromDB.subTitle}
+            level="h2" />
         <div className="inline-flex row g-5">{itemList}</div>
-        {/* {itemList} */}
-
     </div>
 
 }

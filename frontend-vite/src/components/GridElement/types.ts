@@ -9,6 +9,9 @@ export interface GridItemProps {
         alt?: string;
     },
     link?: string,
+    bgColor?: 'white' | 'dark' | 'primary';
+    bgImage?: string;
+    hasBgImage?: boolean;
 }
 
 

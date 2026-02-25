@@ -28,7 +28,7 @@ export default function ReferenzElement({title = 'My Services', subTitle = 'sub 
     }
 
     itemList = referenzElementFromDB.items?.map((item, index) => {
-        if (index <= (maxImagesCounter - 0)) {
+        if (index <= (maxImagesCounter - 1)) {
             return <ReferenzElementItem key={item.title.replaceAll(' ', '-')} {...item} />
         }
     })

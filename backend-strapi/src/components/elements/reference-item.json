@@ -17,6 +17,16 @@
     },
     "button": {
       "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasButton"
+            },
+            true
+          ]
+        }
+      },
       "component": "components.button",
       "repeatable": false
     },

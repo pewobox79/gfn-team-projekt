@@ -6,7 +6,6 @@ export default function HomePage() {
 
     const [pages, setPages] = useState([])
     useEffect(() => {
-
         getPages().then(res => setPages(res.data))
     }, [])
 

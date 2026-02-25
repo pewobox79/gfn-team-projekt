@@ -1,26 +1,36 @@
-import CallToAction from "@/components/CallToActionElement"
-import Footer from "@/components/footer/Footer"
+
+import Jumbotron from "@/components/Jumbotron"
 import { getPages } from "@/lib/axios/pagesHelper"
 import { useEffect, useState } from "react"
 
 export default function HomePage() {
   const [pages, setPages] = useState([])
     useEffect(() => {
-        getPages().then(res => setPages(res.data))
+        getPages().then(res => {
+            console.log(res.data)
+            setPages(res.data)
+        })
     }, [])
 
 
     return <>
         <h1 className="text-[4rem]">GFN Projekt</h1>
-        {JSON.stringify(pages)}
-        <CallToAction 
-            title="Subscribe to our Newsletter!"
-            description='this description lorem ipsum was brought to you by blabla hirone the third company in a row.'
+        <Jumbotron
+            title={"Startup Your\nBusiness Agency"}
+            subTitle="We build modern solutions"
             hasButton={true}
+            hasImage={true}
+            button={{
+                label: "GET STARTED NOW",
+                link: "/start",
+                bgColor: "bg-red-500",
+                hasBorderRaduis: true,
+                hasIcon: false
+            }}
         />
-        <Footer/>
-
-        
-
+        {pages.map((page: { documentId: string }) => {
+            return <p key={page.documentId}>{JSON.stringify(page)}</p>
+        })}
+        <Footer />
     </>
 }

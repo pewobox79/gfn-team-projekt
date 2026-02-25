@@ -7,11 +7,15 @@ export const ButtonFragment = {
     }
 }
 
+export const BgImageFragment ={
+    image:true
+}
+
 //component fragments
 export const jumbotronFragment = {
     'components.jumbotron': {
         populate: {
-            ...ButtonFragment
+            ...ButtonFragment,
         },
     }
 }
@@ -22,6 +26,19 @@ export const referenceElementFragment = {
             items: {
                 populate: {
                     ...ButtonFragment
+                }
+            }
+        }
+    }
+}
+
+export const gridElementFragment = {
+    'elements.grid-element': {
+        populate: {
+            items: {
+                populate: {
+                    ...ButtonFragment,
+                    ...BgImageFragment
                 }
             }
         }

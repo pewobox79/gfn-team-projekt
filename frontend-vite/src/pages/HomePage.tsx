@@ -1,4 +1,5 @@
 
+import Footer from "@/components/footer/Footer"
 import { getPages } from "@/lib/axios/pagesHelper"
 import { useEffect, useState } from "react"
 
@@ -15,5 +16,6 @@ export default function HomePage() {
         {pages.map((page: { documentId: string }) => {
             return <p key={page.documentId}>{JSON.stringify(page)}</p>
         })}
+        <Footer />
     </>
 }

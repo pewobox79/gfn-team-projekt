@@ -16,7 +16,7 @@ const FooterNavigation = () => {
         }
         fetchLinks()
     }, [])
-    console.log(links)
+    
     return (
         <ul>
             {links.map((linkNav: { id: number, label: string, link: string }) => (

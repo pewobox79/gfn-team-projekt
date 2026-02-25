@@ -28,6 +28,7 @@ export const jumbotronFragment = {
 export const referenceElementFragment = {
     'elements.reference-element': {
         populate: {
+            ...ImageFragment,
             items: {
                 populate: {
                     ...ButtonFragment
@@ -40,10 +41,11 @@ export const referenceElementFragment = {
 export const gridElementFragment = {
     'elements.grid-element': {
         populate: {
+            ...ImageFragment,
             items: {
                 populate: {
                     ...ButtonFragment,
-                    ...ImageFragment
+                    ...BackgroundImageFragment
                 }
             }
         }

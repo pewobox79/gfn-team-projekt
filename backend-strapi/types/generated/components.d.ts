@@ -74,11 +74,11 @@ export interface ElementsGridItem extends Struct.ComponentSchema {
   };
   attributes: {
     bgColor: Schema.Attribute.Enumeration<['red', 'white', 'black']>;
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Schema.Attribute.Component<'components.button', false>;
     description: Schema.Attribute.Text;
     hasBgImage: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     hasButton: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }

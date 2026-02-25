@@ -52,7 +52,7 @@
         "black"
       ]
     },
-    "image": {
+    "bgImage": {
       "type": "media",
       "conditions": {
         "visible": {

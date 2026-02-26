@@ -1,10 +1,12 @@
+import type { MyButtonProps } from "@/components/MyButton"
+
 export type referenzElementBgColor = "red" | "white" | "black"
 
 export interface ReferenzElementItemType {
     title: string
     description: string
     hasButton: boolean
-    button?: string
+    button?: MyButtonProps
     image?: string
 }
 

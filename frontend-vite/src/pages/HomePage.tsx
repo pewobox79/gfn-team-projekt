@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import Jumbotron from "@/components/Jumbotron"
 import { getPages } from "@/lib/axios/pagesHelper"
@@ -33,5 +34,21 @@ export default function HomePage() {
         {pages.map((page: { documentId: string }) => {
             return <p key={page.documentId}>{JSON.stringify(page)}</p>
         })}
+=======
+
+import TestElement from "@/components/TestElement";
+
+export default function HomePage() {
+  return (
+    <>
+      <h1 className="text-[4rem]">GFN Projekt</h1>
+
+      
+
+      <TestElement  />
+      
+      
+>>>>>>> c52e97c (Button Complete)
     </>
+  );
 }

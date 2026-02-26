@@ -32,6 +32,20 @@ export interface ComponentsJumbotron extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsCtaElement extends Struct.ComponentSchema {
+  collectionName: 'components_elements_cta_elements';
+  info: {
+    displayName: 'ctaElement';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.Enumeration<['red', 'white', 'black']>;
+    button: Schema.Attribute.Component<'components.button', false>;
+    description: Schema.Attribute.Text;
+    hasButton: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsGridElement extends Struct.ComponentSchema {
   collectionName: 'components_elements_grid_elements';
   info: {
@@ -60,11 +74,11 @@ export interface ElementsGridItem extends Struct.ComponentSchema {
   };
   attributes: {
     bgColor: Schema.Attribute.Enumeration<['red', 'white', 'black']>;
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     button: Schema.Attribute.Component<'components.button', false>;
     description: Schema.Attribute.Text;
     hasBgImage: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     hasButton: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -120,6 +134,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'components.button': ComponentsButton;
       'components.jumbotron': ComponentsJumbotron;
+      'elements.cta-element': ElementsCtaElement;
       'elements.grid-element': ElementsGridElement;
       'elements.grid-item': ElementsGridItem;
       'elements.nav-item': ElementsNavItem;

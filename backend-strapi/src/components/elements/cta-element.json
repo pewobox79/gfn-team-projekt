@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_elements_reference_items",
+  "collectionName": "components_elements_cta_elements",
   "info": {
-    "displayName": "referenceItem"
+    "displayName": "ctaElement"
   },
   "options": {},
   "attributes": {
@@ -9,11 +9,19 @@
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "text"
+    },
+    "bgColor": {
+      "type": "enumeration",
+      "enum": [
+        "red",
+        "white",
+        "black"
+      ]
     },
     "hasButton": {
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "button": {
       "type": "component",
@@ -29,16 +37,6 @@
       },
       "component": "components.button",
       "repeatable": false
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
     }
   },
   "config": {}

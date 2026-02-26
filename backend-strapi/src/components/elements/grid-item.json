@@ -17,6 +17,16 @@
     },
     "button": {
       "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasButton"
+            },
+            true
+          ]
+        }
+      },
       "component": "components.button",
       "repeatable": false
     },
@@ -42,7 +52,7 @@
         "black"
       ]
     },
-    "image": {
+    "bgImage": {
       "type": "media",
       "conditions": {
         "visible": {

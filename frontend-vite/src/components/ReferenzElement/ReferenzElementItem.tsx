@@ -7,7 +7,7 @@ export default function ReferenzElementItem(item: ReferenzElementItemType) {
 
     console.log("item", item)
 
-    const bittonData: MyButtonProps = {
+    const buttonData: MyButtonProps = {
         label: "Test Button",
         link: "www.db.de",
         bgColor: 'red',
@@ -15,10 +15,10 @@ export default function ReferenzElementItem(item: ReferenzElementItemType) {
     }
 
     if (item.hasButton && item.button) {
-        bittonData.label = item.button.label
-        bittonData.link = item.button.link
-        bittonData.bgColor = item.button.bgColor
-        bittonData.hasBorderRadius = item.button.hasBorderRadius
+        buttonData.label = item.button.label
+        buttonData.link = item.button.link
+        buttonData.bgColor = item.button.bgColor
+        buttonData.hasBorderRadius = item.button.hasBorderRadius
     }
 
     return <div className="flex flex-col text-center p-0 md:p-12">
@@ -31,7 +31,7 @@ export default function ReferenzElementItem(item: ReferenzElementItemType) {
             <p className="text-base w-72 justify-self-center text-center mt-4 leading-7 font-normal text-gray-500">{item.description}</p>
         </div>
         <div className="text-center m-2" style={{display: item.hasButton ? "block" : "none"}}>
-            <MyButton label={bittonData.label} link={bittonData.link} bgColor={bittonData.bgColor} hasBorderRadius={bittonData.hasBorderRadius} />
+            <MyButton label={buttonData.label} link={buttonData.link} bgColor={buttonData.bgColor} hasBorderRadius={buttonData.hasBorderRadius} />
         </div>
     </div>
 

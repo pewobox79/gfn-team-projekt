@@ -18,8 +18,10 @@ export default function HomePage() {
         <Jumbotron
             title={"Startup Your\nBusiness Agency"}
             subTitle="We build modern solutions"
+            bgColor="bg-gray-800"
             hasButton={true}
             hasImage={true}
+            
             button={{
                 label: "GET STARTED NOW",
                 link: "/start",
@@ -31,6 +33,5 @@ export default function HomePage() {
         {pages.map((page: { documentId: string }) => {
             return <p key={page.documentId}>{JSON.stringify(page)}</p>
         })}
-        <Footer />
     </>
 }

@@ -19,6 +19,7 @@ export default function CallToAction({
 
   const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+<<<<<<< Updated upstream
   function handleSubscribe() {
     setStatus("success");
     setEmail("");
@@ -31,6 +32,19 @@ export default function CallToAction({
 
       {/* Input where to give your email + Button*/}
       <div className="flex w-full md:w-auto gap-2">
+=======
+  return (
+    <section
+      className={`w-full rounded-2xl px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6 ${bgColor}`}
+    >
+      {/* left */}
+      <h2 className="text-white text-2xl font-semibold">
+        {title}
+      </h2>
+
+      {/* right: email and button */}
+      <div className="flex items-center gap-3 w-full md:w-auto">
+>>>>>>> Stashed changes
         <input
           type="email"
           placeholder={placeholder}

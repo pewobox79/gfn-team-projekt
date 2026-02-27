@@ -1,14 +1,19 @@
 
+
 import CallToAction from "@/components/CallToActionElement"
+import HeadingElement from "@/components/HeadingElement"
 
 import Footer from "@/components/footer/Footer"
 import MyButton from "@/components/MyButton"
 import { getPages } from "@/lib/axios/pagesHelper"
 import { useEffect, useState } from "react"
 
-export default function HomePage() {
 
-    const [pages, setPages] = useState([])
+
+    
+
+export default function HomePage() {
+  const [pages, setPages] = useState([])
     useEffect(() => {
         getPages().then(res => setPages(res.data))
     }, [])

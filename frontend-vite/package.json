@@ -12,11 +12,15 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "axios": "^1.13.5",
     "qs": "^6.15.0",
 =======
     "lucide-react": "^0.575.0",
 >>>>>>> e4f8f31 (Call To Action Subscribe Added)
+=======
+    "lucide-react": "^0.575.0",
+>>>>>>> 9e2eb1fec17560188b794c1e4a7d4b1f1b9eddb6
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.0"

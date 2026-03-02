@@ -51,3 +51,11 @@ export const gridElementFragment = {
         }
     }
 }
+
+export const ctaElementFragment = {
+    'elements.cta-element': {
+        populate: {
+            button:true
+        }
+    }
+}

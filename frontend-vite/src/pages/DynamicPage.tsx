@@ -1,7 +1,23 @@
-const DynamicPage =()=>{
+import { getPageBySlug } from "@/lib/axios/pagesHelper"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+const DynamicPage = () => {
 
-    return <h1>hier wird die dynamic page gerendered anhand des SLUG via useParams. mehr infos siehe in ticket gfn-20</h1>
-   
+    const [pageContent, setPageContent] = useState<{title: string, blocks:[]}>()
+    //hier rufe ich den slug value aus der URL auf!
+    const { slug } = useParams<{ slug: string }>()
+
+    useEffect(() => {
+        getPageBySlug(slug as string)
+            .then(res => setPageContent(res.data[0]))
+    }, [slug])
+
+    if (!pageContent) {
+        return <h1>no page available - 404</h1>
+    }
+
+    return <h1 className="text-xl">{pageContent?.title}</h1>
+
 }
 
 export default DynamicPage

@@ -1,38 +1,30 @@
-export default function RenderPageComponents(pageContentBlocks: any) {
+export interface PageBlockType {
+    __component?: string,
+    id?: string
+}
+
+export type PageBlockTypes = PageBlockType
+
+export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]) {
 
     console.log("pageContentBlocks", pageContentBlocks)
 
-    if (!pageContentBlocks) {
+    if (!pageContentBlocks || Object.values(pageContentBlocks).length < 1) {
         return <h2>no page blocks available</h2>
     }
 
-    const blockList = (pageContentBlocks) => {
-        // const pageBlockElements: React.ReactElement[] = [];
-        // const pageBlockElements = []
-
-        console.log("pageContentBlocks bevore map", pageContentBlocks)
-
-        // pageContentBlocks.forEach((element,index) => {
-        //     pageBlockElements.push(renderComponent(block, index))
-        // });
-
-        // const pageBlockElements = pageContentBlocks.map((block, index) => {
-        //     console.log("block", block)
-        //     return renderComponent(block, index)
-        // })
+    const blockList = (pageContentBlocks: PageBlockTypes[]) => {
 
         const pageBlockElements = Object.values(pageContentBlocks).map((block, index) => {
-            console.log("block", block)
             return renderComponent(block, index)
         })
         return pageBlockElements 
     }
 
-    const renderComponent = (block: any, index: number) => {
+    const renderComponent = (block: PageBlockTypes, index: number) => {
         let currentComponent: React.ReactElement | undefined;
         switch (block.__component) {
             case "elements.reference-element":
-                console.log("switch elements.reference-element", block.__component)
                 currentComponent = <p>ToDo: use component reference-element here</p>
                 // currentComponent = <ReferenzElement key={`${block.__component}-${block.id}`} {...block} />
                 break;
@@ -43,9 +35,6 @@ export default function RenderPageComponents(pageContentBlocks: any) {
 
         return <div key={`${block.__component}-${block.id}-${index}`}>{currentComponent}</div>
     }
-
-    console.log("blockList", blockList(pageContentBlocks))
-
 
     return <div>
         {blockList(pageContentBlocks)}

@@ -1,17 +1,10 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
 import { X, Menu } from "lucide-react";
+import NavbarNavigation from "./NavbarNavigation";
 
-const menuData = [
-  { title: "Home", path: "/" },
-  { title: "About Us", path: "/about" },
-  { title: "Services", path: "/services" },
-  { title: "Blog", path: "/blog" },
-  { title: "Pages", path: "/pages" },
-  { title: "Contact Us", path: "/contact" },
-];
 
-export default function Navbar() {
+const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -39,17 +32,8 @@ export default function Navbar() {
 
             {/* DESKTOP MENU */}
             <nav className="hidden md:flex items-center space-x-10">
-              {menuData.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className="text-black hover:text-orange-500 font-medium text-lg transition"
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </nav>
-
+              <NavbarNavigation />
+              </nav>
             {/* MOBILE BUTTON */}
             <button
               className="md:hidden text-black p-2"
@@ -90,19 +74,12 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <ul className="divide-y divide-gray-100">
-          {menuData.map((item, index) => (
-            <li key={index}>
-              <Link
-                to={item.path}
-                className="block px-6 py-4 text-gray-800 font-medium hover:bg-gray-50 transition"
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.title}
-              </Link>
-            </li>
-          ))}
+          <NavbarNavigation 
+          onClick={() => setMobileOpen(false)}/>
+      
         </ul>
       </div>
     </>
   );
 }
+export default Navbar

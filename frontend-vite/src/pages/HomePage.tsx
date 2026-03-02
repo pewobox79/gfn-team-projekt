@@ -25,7 +25,7 @@ export default function HomePage() {
             button={{
                 label: "GET STARTED NOW",
                 link: "/start",
-                bgColor: "bg-red-500",
+                bgColor: "red",
                 hasBorderRaduis: true,
                 hasIcon: false
             }}

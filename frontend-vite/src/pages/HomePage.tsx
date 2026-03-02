@@ -18,7 +18,7 @@ export default function HomePage() {
         <Jumbotron
             title={"Startup Your\nBusiness Agency"}
             subTitle="We build modern solutions"
-            bgColor="bg-gray-800"
+            bgColor="black"
             hasButton={true}
             hasImage={true}
             
@@ -26,7 +26,7 @@ export default function HomePage() {
                 label: "GET STARTED NOW",
                 link: "/start",
                 bgColor: "red",
-                hasBorderRaduis: true,
+                hasBorderRadius: true,
                 hasIcon: false
             }}
         />

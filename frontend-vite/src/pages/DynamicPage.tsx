@@ -1,9 +1,10 @@
 import { getPageBySlug } from "@/lib/axios/pagesHelper"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import RenderPageComponents from "./RenderPageComponents"
 const DynamicPage = () => {
 
-    const [pageContent, setPageContent] = useState<{title: string, blocks:[]}>()
+    const [pageContent, setPageContent] = useState<{ title: string, blocks: [] }>()
     //hier rufe ich den slug value aus der URL auf!
     const { slug } = useParams<{ slug: string }>()
 
@@ -16,7 +17,12 @@ const DynamicPage = () => {
         return <h1>no page available - 404</h1>
     }
 
-    return <h1 className="text-xxl">{pageContent?.title}</h1>
+    return <div>
+        <h1 className="text-xl">{pageContent?.title}</h1>
+        <RenderPageComponents {...pageContent.blocks} />
+    </div>
+
+
 
 }
 

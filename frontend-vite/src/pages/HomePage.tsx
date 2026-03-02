@@ -34,4 +34,5 @@ export default function HomePage() {
             return <p key={page.documentId}>{JSON.stringify(page)}</p>
         })}
     </>
+  ;
 }

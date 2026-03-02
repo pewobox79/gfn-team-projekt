@@ -1,4 +1,4 @@
-import MobilMenu from "@/components/header/MobilMenu";
+import MobilMenu from "@/components/header/Navbar";
 import { Outlet } from "react-router-dom";
 
 export default function MainLayout(){

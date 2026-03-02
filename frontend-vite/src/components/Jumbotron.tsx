@@ -1,5 +1,6 @@
 import getOptimizedImage from "@/utils/formatter"
 import MyButton from "./MyButton"
+import Navbar from "./header/Navbar"
 
 type JumbotronType = {
     title: string
@@ -40,6 +41,7 @@ const Jumbotron = ({ title, subTitle, bgImage, hasImage, bgColor, hasButton, but
                 backgroundPosition: "center"
             } : undefined}>
 
+            <Navbar />
             <h1 className="text-6xl font-bold whitespace-pre-line text-center leading-tight">{title}</h1>
 
             <h4 className="mt-8 mb-8 text-xs">{subTitle}</h4>

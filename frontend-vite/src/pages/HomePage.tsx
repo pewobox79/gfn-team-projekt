@@ -19,6 +19,7 @@ export default function HomePage() {
 
     return <>
         <h1 className="text-[4rem]">GFN Projekt</h1>
+        {JSON.stringify(pages)}
         <CallToAction 
             title="Subscribe to our Newsletter!"
             description='this description lorem ipsum was brought to you by blabla hirone the third company in a row.'

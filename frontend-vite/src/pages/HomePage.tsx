@@ -1,15 +1,7 @@
-
-
 import CallToAction from "@/components/CallToActionElement"
-
 import Footer from "@/components/footer/Footer"
-import Navbar from "@/components/header/Navbar"
 import { getPages } from "@/lib/axios/pagesHelper"
 import { useEffect, useState } from "react"
-
-
-
-    
 
 export default function HomePage() {
   const [pages, setPages] = useState([])

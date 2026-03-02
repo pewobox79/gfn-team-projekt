@@ -1,5 +1,5 @@
 import qs from 'qs'
-import { gridElementFragment, jumbotronFragment, referenceElementFragment } from '../fragments/queryFragments';
+import { ctaElementFragment, gridElementFragment, jumbotronFragment, referenceElementFragment } from '../fragments/queryFragments';
 
 export const pagesQuery = qs.stringify({
     populate: {
@@ -7,7 +7,8 @@ export const pagesQuery = qs.stringify({
             on: {
                 ...jumbotronFragment,
                 ...referenceElementFragment,
-                ...gridElementFragment
+                ...gridElementFragment,
+                ...ctaElementFragment
             },
         },
     },

@@ -1,9 +1,12 @@
+import ReferenzElement from "@/components/ReferenzElement/ReferenzElement"
+import type { ReferenzElementType } from "@/types/referenzElement"
+
 export interface PageBlockType {
     __component?: string,
     id?: string
 }
 
-export type PageBlockTypes = PageBlockType
+export type PageBlockTypes = PageBlockType | ReferenzElementType
 
 export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]) {
 
@@ -22,11 +25,12 @@ export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]
     }
 
     const renderComponent = (block: PageBlockTypes, index: number) => {
-        let currentComponent: React.ReactElement | undefined;
+        let currentComponent: React.ReactElement | ReferenzElementType;
         switch (block.__component) {
             case "elements.reference-element":
-                currentComponent = <p>ToDo: use component reference-element here</p>
-                // currentComponent = <ReferenzElement key={`${block.__component}-${block.id}`} {...block} />
+                // currentComponent = <p>ToDo: use component reference-element here</p>
+                console.log("block", block)
+                currentComponent = <ReferenzElement {...block} />
                 break;
             default:
                 currentComponent = <p>Unknown component: {block.__component}</p>

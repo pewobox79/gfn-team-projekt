@@ -12,11 +12,11 @@ export interface ReferenzElementItemType {
 }
 
 export interface ReferenzElementType extends PageBlockType {
-    title: string
-    subTitle: string
-    hasBgImage: boolean
-    image?: string | undefined
-    bgColor: referenzElementBgColor
-    items?: ReferenzElementItemType[] | undefined
+    title? : string
+    subTitle? : string
+    hasBgImage? : boolean
+    image?: string
+    bgColor? : referenzElementBgColor
+    items?: ReferenzElementItemType[]
 }
 

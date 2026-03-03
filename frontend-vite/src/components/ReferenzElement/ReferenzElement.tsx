@@ -19,7 +19,7 @@ export default function ReferenzElement(props: ReferenzElementType) {
 
     return <div className="inline-block md:w-auto items-center border" style={{ backgroundImage: `url(${url})`, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}>
         <HeadingElement eyebrow={elementFromStrapi.subTitle}
-            title={elementFromStrapi.title}
+            title={elementFromStrapi.title ? elementFromStrapi.title : "Title undefined"}
             level="h2" />
         <div className="flex flex-wrap column p-4">{itemList}</div>
     </div>

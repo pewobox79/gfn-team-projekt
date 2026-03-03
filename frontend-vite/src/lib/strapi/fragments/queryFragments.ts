@@ -31,7 +31,8 @@ export const referenceElementFragment = {
             ...ImageFragment,
             items: {
                 populate: {
-                    ...ButtonFragment
+                    ...ButtonFragment,
+                    ...ImageFragment
                 }
             }
         }
@@ -56,6 +57,6 @@ export const ctaElementFragment = {
     'elements.cta-element': {
         populate: {
             button:true
-        }
+        },
     }
 }

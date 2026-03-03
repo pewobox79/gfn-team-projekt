@@ -27,23 +27,20 @@ export default function ReferenzElement(props: ReferenzElementType) {
     // }, [])
 
     // let referenzElementFromDB = getReferenzElementDummy()
-    let itemList = null
+    // let itemList = null
     // if (!errorMsg && referenzElement) {
     //     referenzElementFromDB = referenzElement
     // }
 
-    itemList = elementFromStrapi.items?.map((item, index) => {
+    const itemList = elementFromStrapi.items?.map((item, index) => {
         if (index <= (maxImagesCounter - 1)) {
             return <ReferenzElementItem key={item.title.replaceAll(' ', '-')} {...item} />
         }
     })
 
-    const imagePath = "./src/assets/images/referenzElementImages/"
-    const imageFile = "services-bg-image-1.png"
-
     const {url} = getOptimizedImage(props.image)
 
-    return <div className="w-full md:w-auto border" style={{ backgroundImage: `url(${url})` }}>
+    return <div className="inline-block md:w-auto items-center border" style={{ backgroundImage: `url(${url})`, backgroundRepeat: "no-repeat", backgroundSize: "cover"}}>
         <HeadingElement eyebrow={elementFromStrapi.subTitle}
             title={elementFromStrapi.title}
             level="h2" />

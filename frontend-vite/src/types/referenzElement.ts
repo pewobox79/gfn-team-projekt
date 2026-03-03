@@ -7,16 +7,16 @@ export interface ReferenzElementItemType {
     title: string
     description: string
     hasButton: boolean
-    button?: MyButtonProps
-    image?: string
+    button?: MyButtonProps | undefined
+    image?: string | undefined
 }
 
 export interface ReferenzElementType extends PageBlockType {
     title: string
     subTitle: string
     hasBgImage: boolean
-    image?: string
+    image?: string | undefined
     bgColor: referenzElementBgColor
-    items?: ReferenzElementItemType[]
+    items?: ReferenzElementItemType[] | undefined
 }
 

@@ -37,7 +37,7 @@ export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]
                 break;
         }
 
-        return <div key={`${block.__component}-${block.id}-${index}`}>{currentComponent}</div>
+        return <div className="margin-1rem" key={`${block.__component}-${block.id}-${index}`}>{currentComponent}</div>
     }
 
     return <div>

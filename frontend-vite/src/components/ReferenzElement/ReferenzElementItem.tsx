@@ -2,11 +2,7 @@ import type { ReferenzElementItemType } from "@/types/referenzElement"
 import MyButton, { type MyButtonProps } from "../MyButton"
 import getOptimizedImage from "@/utils/formatter"
 
-const imagePath = "./src/assets/images/referenzElementImages/"
-
 export default function ReferenzElementItem(item: ReferenzElementItemType) {
-
-    console.log("item", item)
 
     const buttonData: MyButtonProps = {
         label: "Test Button",
@@ -21,8 +17,6 @@ export default function ReferenzElementItem(item: ReferenzElementItemType) {
         buttonData.bgColor = item.button.bgColor
         buttonData.hasBorderRadius = item.button.hasBorderRadius
     }
-
-    console.log("item.image", item.image)
     const {url, alt} = getOptimizedImage(item.image)
 
     return <div className="flex flex-col text-center p-0 md:p-12">

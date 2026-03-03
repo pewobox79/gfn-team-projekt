@@ -10,8 +10,6 @@ export type PageBlockTypes = PageBlockType | ReferenzElementType
 
 export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]) {
 
-    console.log("pageContentBlocks", pageContentBlocks)
-
     if (!pageContentBlocks || Object.values(pageContentBlocks).length < 1) {
         return <h2>no page blocks available</h2>
     }
@@ -29,7 +27,6 @@ export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]
         switch (block.__component) {
             case "elements.reference-element":
                 // currentComponent = <p>ToDo: use component reference-element here</p>
-                console.log("block", block)
                 currentComponent = <ReferenzElement {...block} />
                 break;
             default:

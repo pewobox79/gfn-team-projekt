@@ -30,3 +30,7 @@ export const getPageBySlug = async (slug: string) => {
     }
 
 }
+
+export function test(){
+    console.log("test")
+}

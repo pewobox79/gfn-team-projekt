@@ -1,13 +1,14 @@
+import ReferenzElement from "@/components/ReferenzElement/ReferenzElement"
+import type { ReferenzElementType } from "@/types/referenzElement"
+
 export interface PageBlockType {
     __component?: string,
     id?: string
 }
 
-export type PageBlockTypes = PageBlockType
+export type PageBlockTypes = PageBlockType | ReferenzElementType
 
 export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]) {
-
-    console.log("pageContentBlocks", pageContentBlocks)
 
     if (!pageContentBlocks || Object.values(pageContentBlocks).length < 1) {
         return <h2>no page blocks available</h2>
@@ -22,18 +23,18 @@ export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]
     }
 
     const renderComponent = (block: PageBlockTypes, index: number) => {
-        let currentComponent: React.ReactElement | undefined;
+        let currentComponent: React.ReactElement | ReferenzElementType;
         switch (block.__component) {
             case "elements.reference-element":
-                currentComponent = <p>ToDo: use component reference-element here</p>
-                // currentComponent = <ReferenzElement key={`${block.__component}-${block.id}`} {...block} />
+                // currentComponent = <p>ToDo: use component reference-element here</p>
+                currentComponent = <ReferenzElement {...block} />
                 break;
             default:
                 currentComponent = <p>Unknown component: {block.__component}</p>
                 break;
         }
 
-        return <div key={`${block.__component}-${block.id}-${index}`}>{currentComponent}</div>
+        return <div className="margin-1rem" key={`${block.__component}-${block.id}-${index}`}>{currentComponent}</div>
     }
 
     return <div>

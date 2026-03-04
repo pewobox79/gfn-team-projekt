@@ -12,7 +12,6 @@ const GridItem = ({
   hasButton,
   button,
 }: GridItemProps) => {
- console.log("bgimage item", bgImage)
   const bgColorMap = {
     red: "bg-red-600 text-white",
     white: "bg-white text-slate-900",

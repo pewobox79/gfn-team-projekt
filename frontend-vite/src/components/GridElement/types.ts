@@ -1,4 +1,4 @@
-import type { MyButtonProps } from "@/types/types";
+import type { ImageType, MyButtonProps } from "@/types/types";
 
 export interface GridItemProps {
   title?: string;
@@ -10,7 +10,7 @@ export interface GridItemProps {
     alt?: string;
   };
   bgColor?: "red" | "white" | "black";
-  bgImage?: string;
+  bgImage?: ImageType;
   hasBgImage?: boolean;
   id?: string
 }
@@ -23,5 +23,5 @@ export interface GridElementProps {
   items?: GridItemProps[];
   hasBgImage?: boolean;
   bgColor?: "red" | "white" | "black";
-  image?: {formats: [], url:string};
+  image?: ImageType;
 }

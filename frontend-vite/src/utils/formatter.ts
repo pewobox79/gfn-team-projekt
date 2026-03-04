@@ -1,3 +1,5 @@
+import type { ImageType } from "@/types/types"
+
 function createImgUrl(urlString: string) {
     const baseUrl = "http://localhost:1337"
     return baseUrl + urlString
@@ -5,7 +7,7 @@ function createImgUrl(urlString: string) {
 
 }
 
-function getOptimizedImage(imageObject: any) {
+function getOptimizedImage(imageObject: ImageType | undefined) {
 
     if (!imageObject) 
         

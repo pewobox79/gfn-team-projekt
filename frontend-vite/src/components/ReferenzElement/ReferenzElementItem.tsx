@@ -1,6 +1,7 @@
 import type { ReferenzElementItemType } from "@/types/referenzElement"
-import MyButton, { type MyButtonProps } from "../MyButton"
+import MyButton from "../MyButton"
 import getOptimizedImage from "@/utils/formatter"
+import type { MyButtonProps } from "@/types/types"
 
 export default function ReferenzElementItem(item: ReferenzElementItemType) {
 

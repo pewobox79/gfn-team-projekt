@@ -1,5 +1,4 @@
 export type referenzBgColor = "red" | "white" | "black"
-
 export type CallToActionProps = {
     __component?: string
     id?: number
@@ -22,9 +21,7 @@ export type JumbotronType = {
     id?: number
     title?: string
     subTitle?: string
-    bgImage?: {
-        url: string
-    }
+    bgImage?: ImageType | undefined
     hasBgImage?: boolean
     bgColor?: referenzBgColor;
     hasButton?: boolean
@@ -37,8 +34,13 @@ export type ButtonType = {
     bgColor: referenzBgColor;
     hasBorderRadius: boolean
     hasIcon: boolean
-    icon?: string
+    icon?: ImageType
 }
 
 export interface FooterTypes { navHeading?: string, copyright?: string, company?: string }
 export type NavItemTypes = { id?: number, label?: string, link?: string }
+export interface ImageType {
+    url: string
+    formats?: { medium?: { url?: string } },
+    alternativeText?: string
+}

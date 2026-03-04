@@ -34,21 +34,16 @@ export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]
                 // currentComponent = <p>ToDo: use component reference-element here</p>
                 currentComponent = <Jumbotron {...block as JumbotronType} />
                 break;
-            
             case "elements.reference-element":
                 // currentComponent = <p>ToDo: use component reference-element here</p>
                 currentComponent = <ReferenzElement {...block as ReferenzElementType} />
                 break;
             case "elements.grid-element":
-            
                 currentComponent = <GridElement {...block as GridElementProps} />
                 break;
             case "elements.cta-element":
-            
                 currentComponent = <CallToAction {...block as CallToActionProps} />
                 break;
-
-
             default:
                 currentComponent = <p>Unknown component: {block.__component}</p>
                 break;

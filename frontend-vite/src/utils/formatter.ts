@@ -17,7 +17,7 @@ function getOptimizedImage(imageObject: any) {
 
     const alt = imageObject?.alternativeText || "mein Bild"
 
-    if (imageObject.formats?.medium?.url) {
+    if (imageObject?.formats?.medium?.url) {
 
         return {
             url: createImgUrl(imageObject.formats.medium.url),
@@ -26,7 +26,7 @@ function getOptimizedImage(imageObject: any) {
     }
 
     return {
-        url: createImgUrl(imageObject.url),
+        url: createImgUrl(imageObject?.url),
         alt
     }
 }

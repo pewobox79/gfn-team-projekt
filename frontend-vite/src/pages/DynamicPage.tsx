@@ -17,10 +17,8 @@ const DynamicPage = () => {
         return <h1>no page available - 404</h1>
     }
 
-    return <div>
-        <h1 className="text-xl">{pageContent?.title}</h1>
-        <RenderPageComponents {...pageContent.blocks} />
-    </div>
+    return <RenderPageComponents {...pageContent.blocks} />
+    
 
 
 

@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
 import FooterNavigation from "./FooterNavigation";
 import { getFooter } from "@/lib/axios/footerHelper";
+import type { FooterTypes } from "@/types/types";
 
 const Footer = () => {
-   const [footer, setFooter] = useState<{navHeading: string,copyright: string,company: string}>()
-   
-       useEffect(() => {
-           const fetchFooter = async () => {
-               const response = await getFooter();
-            
-               if (response) {
-                   setFooter(response.data)
-               }
-           }
-           fetchFooter()
-       }, [])
-       console.log(footer)
+    const [footer, setFooter] = useState<FooterTypes>()
+
+    useEffect(() => {
+        const fetchFooter = async () => {
+            const response = await getFooter();
+
+            if (response) {
+                setFooter(response.data)
+            }
+        }
+        fetchFooter()
+    }, [])
+    console.log(footer)
     return (
         <footer className="bg-[#070b2b] text-white mt-auto w-full ">
             <div className="container mx-auto px-6 py-8">

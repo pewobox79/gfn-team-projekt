@@ -1,7 +1,6 @@
-import type { MyButtonProps } from "@/components/MyButton"
 import type { PageBlockType } from "@/pages/RenderPageComponents"
+import type { MyButtonProps, referenzBgColor } from "./types"
 
-export type referenzElementBgColor = "red" | "white" | "black"
 
 export interface ReferenzElementItemType {
     title: string
@@ -10,13 +9,12 @@ export interface ReferenzElementItemType {
     button?: MyButtonProps | undefined
     image?: string | undefined
 }
-
 export interface ReferenzElementType extends PageBlockType {
     title? : string
     subTitle? : string
     hasBgImage? : boolean
     image?: string
-    bgColor? : referenzElementBgColor
+    bgColor? : referenzBgColor
     items?: ReferenzElementItemType[]
 }
 

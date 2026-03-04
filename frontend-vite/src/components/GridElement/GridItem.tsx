@@ -1,3 +1,4 @@
+import getOptimizedImage from "@/utils/formatter";
 import MyButton from "../MyButton";
 import type { GridItemProps } from "./types";
 
@@ -11,7 +12,7 @@ const GridItem = ({
   hasButton,
   button,
 }: GridItemProps) => {
-
+ console.log("bgimage item", bgImage)
   const bgColorMap = {
     red: "bg-red-600 text-white",
     white: "bg-white text-slate-900",
@@ -20,17 +21,16 @@ const GridItem = ({
 
   const bgClass = bgColor ? bgColorMap[bgColor] : bgColorMap.white;
 
-  const hasBg = hasBgImage && bgImage;
 
   return (
     <div className="wrapper w-full rounded-xl border border-gray-200 shadow-md">
 
       <div
-        className={`content p-8 ${!hasBg ? bgClass : ""}`}
+        className={`content p-8 ${!hasBgImage && bgClass}`}
         style={
-          hasBg
+          hasBgImage
             ? {
-                backgroundImage: `url(${bgImage})`,
+              backgroundImage: `url(${getOptimizedImage(bgImage).url})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 color: "#ffffff",

@@ -1,13 +1,8 @@
 
-import MyButton, { type MyButtonProps } from "./MyButton";
+import type { CallToActionProps } from "@/types/types";
+import MyButton from "./MyButton";
 
-type CallToActionProps = {
-  title: string;
-  description: string
-  bgColor?: string;
-  hasButton?: boolean
-  button?: MyButtonProps
-};
+
 
 export default function CallToAction({
   title,

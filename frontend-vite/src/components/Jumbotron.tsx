@@ -1,30 +1,9 @@
 import getOptimizedImage from "@/utils/formatter"
 import MyButton from "./MyButton"
 import Navbar from "./header/Navbar"
+import type { JumbotronType } from "@/types/types"
 
-type JumbotronType = {
-    title: string
-    subTitle: string
-    bgImage?: {
-        url: string
-    }
-    hasImage: boolean
-    bgColor?: 'white' | 'red' | 'black';
-    hasButton: boolean
-    button?: ButtonType
-}
-
-type ButtonType = {
-    label: string
-    link: string
-    bgColor: 'white' | 'red' | 'black';
-    hasBorderRadius: boolean
-    hasIcon: boolean
-    icon?: string
-}
-
-
-const Jumbotron = ({ title, subTitle, bgImage, hasImage, bgColor, hasButton, button }: JumbotronType) => {
+const Jumbotron = ({ title, subTitle, bgImage, hasBgImage, bgColor, hasButton, button }: JumbotronType) => {
     const optimized = getOptimizedImage(bgImage)
     const bgClass =
         bgColor === "black"
@@ -35,7 +14,7 @@ const Jumbotron = ({ title, subTitle, bgImage, hasImage, bgColor, hasButton, but
 
     return (<>
         <div className={`relative flex flex-col w-full h-[500px] text-white justify-center items-center  ${bgClass}`}
-            style={optimized?.url && hasImage ? {
+            style={optimized?.url && hasBgImage ? {
                 backgroundImage: `url(${optimized.url})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center"

@@ -1,10 +1,19 @@
-import CallToAction from "@/components/CallToActionElement"
-import GridElement from "@/components/GridElement/GridElement"
-import type { GridElementProps } from "@/components/GridElement/types"
-import Jumbotron from "@/components/Jumbotron"
-import ReferenzElement from "@/components/ReferenzElement/ReferenzElement"
+import { lazy, Suspense } from "react"
+
+//import CallToAction from "@/components/CallToActionElement"
+//import GridElement from "@/components/GridElement/GridElement"
+//import Jumbotron from "@/components/Jumbotron"
+//import ReferenzElement from "@/components/ReferenzElement/ReferenzElement"
+
+//lazy load block
+const CallToAction = lazy(() => import('@/components/CallToActionElement'))
+const GridElement =lazy(()=> import("@/components/GridElement/GridElement"))
+const Jumbotron = lazy(()=>import('@/components/Jumbotron'))
+const ReferenzElement = lazy(() => import("@/components/ReferenzElement/ReferenzElement"))
+
 import type { ReferenzElementType } from "@/types/referenzElement"
 import type { CallToActionProps, JumbotronType } from "@/types/types"
+import type { GridElementProps } from "@/components/GridElement/types"
 
 export interface PageBlockType {
     __component?: string,
@@ -32,17 +41,17 @@ export default function RenderPageComponents(pageContentBlocks: PageBlockTypes[]
         switch (block.__component) {
             case "components.jumbotron":
                 // currentComponent = <p>ToDo: use component reference-element here</p>
-                currentComponent = <Jumbotron {...block as JumbotronType} />
+                currentComponent = <Suspense fallback={<h1 style={{ fontSize: '3rem', fontWeight: "bold" }}>Jumbotron loading...</h1>}><Jumbotron {...block as JumbotronType} /></Suspense>
                 break;
             case "elements.reference-element":
                 // currentComponent = <p>ToDo: use component reference-element here</p>
-                currentComponent = <ReferenzElement {...block as ReferenzElementType} />
+                currentComponent = <Suspense fallback={<h1 style={{ fontSize: '3rem', fontWeight: "bold" }}>ReferenzElement loading...</h1>}><ReferenzElement {...block as ReferenzElementType} /></Suspense>
                 break;
             case "elements.grid-element":
-                currentComponent = <GridElement {...block as GridElementProps} />
+                currentComponent = <Suspense fallback={<h1 style={{ fontSize: '3rem', fontWeight: "bold" }}>GridElement loading...</h1>}><GridElement {...block as GridElementProps} /></Suspense>
                 break;
             case "elements.cta-element":
-                currentComponent = <CallToAction {...block as CallToActionProps} />
+                currentComponent = <Suspense fallback={<h1 style={{ fontSize: '3rem', fontWeight: "bold" }}>GridElement loading...</h1>}><CallToAction {...block as CallToActionProps} /></Suspense>
                 break;
             default:
                 currentComponent = <p>Unknown component: {block.__component}</p>

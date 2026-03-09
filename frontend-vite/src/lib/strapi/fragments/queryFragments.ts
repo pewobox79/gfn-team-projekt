@@ -3,7 +3,11 @@
 //item fragment
 export const ButtonFragment = {
     button: {
-        populate: ['icon']
+        populate: {
+            icon:{
+                fields:["formats"]
+            }
+        }
     }
 }
 

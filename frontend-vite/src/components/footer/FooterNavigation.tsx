@@ -21,11 +21,11 @@ const FooterNavigation = () => {
     return (
         <ul>
             {links.map((linkNav: NavItemTypes) => (
-                <Link key={linkNav.id} to={linkNav.link}>
+                <Link key={linkNav.id} to={linkNav?.link || ""}>
                     <li
                         className="hover:text-white cursor-pointer"
                     >
-                        {linkNav.label}
+                        {linkNav?.label || ""}
                     </li>
                 </Link>
             ))}

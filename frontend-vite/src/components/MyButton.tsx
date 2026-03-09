@@ -14,7 +14,7 @@ const MyButton = ({
   const baseStyles =
     "px-8 py-3 font-bold uppercase inline-block";
   return (
-    <Link to={link as string} className={`${baseStyles} ${getBgColor(bgColor)} ${radius}`}>
+    <Link to={link as string} className={`${baseStyles} ${getBgColor(bgColor)} ${radius} z-1`}>
       {label}
     </Link>
   );

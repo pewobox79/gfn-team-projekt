@@ -1,5 +1,3 @@
-import TestElement from "@/components/TestElement";
-
 import Jumbotron from "@/components/Jumbotron"
 import { getPages } from "@/lib/axios/pagesHelper"
 import { useEffect, useState } from "react"
@@ -21,7 +19,7 @@ export default function HomePage() {
             subTitle="We build modern solutions"
             bgColor="black"
             hasButton={true}
-            hasImage={true}
+            hasBgImage={true}
             
             button={{
                 label: "GET STARTED NOW",

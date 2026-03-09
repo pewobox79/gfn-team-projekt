@@ -20,7 +20,7 @@ const GridElement = ({
         white: "bg-white",
         black: "bg-slate-900",
     };
-
+    
     const bgClass = bgColor ? bgColorMap[bgColor] : bgColorMap.white;
     return (
         <div

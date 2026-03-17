@@ -1,11 +1,20 @@
 import axios from "axios";
 import { BASE_URL_STRAPI } from "./config";
 import { pagesQuery } from "../strapi/queries/pagesQuery";
+import { BEARER_TOKEN } from "@/utils/tokens";
+
+const config ={
+    method: 'GET',
+    headers:{
+        Authorization: `bearer ${BEARER_TOKEN}`
+    }
+}
+
 
 export async function getPages() {
     const url = BASE_URL_STRAPI + `/api/pages?${pagesQuery}`
     try {
-        const response = await axios.get(url) //.get liefert javascript object
+        const response = await axios.get(url, config) //.get liefert javascript object
         if (response.request.statusText !== "OK") {
             console.log("failed to fetch")
             return
@@ -19,7 +28,7 @@ export async function getPages() {
 export const getPageBySlug = async (slug: string) => {
     const url = BASE_URL_STRAPI + `/api/pages?filters[slug][$eq]=${slug}&${pagesQuery}`
     try {
-        const response = await axios.get(url) //.get liefert javascript object
+        const response = await axios.get(url, config) //.get liefert javascript object
         if (response.request.statusText !== "OK") {
             console.log("failed to fetch")
             return

@@ -85,6 +85,9 @@ public/uploads/*
 .tsbuildinfo
 .eslintcache
 
+types/generated/*
+types/generated/contentTypes.d.ts
+
 ############################
 # Node.js
 ############################
